@@ -1,0 +1,9 @@
+.startPage{
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
