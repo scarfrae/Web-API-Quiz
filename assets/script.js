@@ -1,4 +1,12 @@
+//method to delete info on first page
+//function to display question cards 
+    //options is radio form  and then submit button (onclick events)
+        //boolin function to determine if question was correct or incorrect 
+        //function to move onto next question
+    
 
+    
+var timerEl = document.getElementById('countdownTimer');
 var questionIndex = 0;
 //Array of objects (questions)
     var questions = [
@@ -21,6 +29,7 @@ var questionIndex = 0;
         },
     ];
 
+
 //function to display questions array
 function questionFormat() {
     var displayQuestions = document.getElementById("questions");
@@ -35,4 +44,18 @@ function questionFormat() {
 }
 questionFormat();
 
-//timer
+//timer 
+//seconds left at start of quiz
+var timeLeft = 60;
+//function to countdown
+function countdown_timer(){
+    var timeInterval = setInterval(function() {
+        timeLeft--;
+        timerEl.textContent = timeLeft;
+
+        if(timeleft === 0) {
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+}
+countdown_timer();
