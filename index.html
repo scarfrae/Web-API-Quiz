@@ -10,35 +10,37 @@
 
 </head>
 <body>
-    <!--header: includes View Highscores link and timer-->
     <nav>
-        <div class="highscores">View Highscores</div>
+        <!--Highscore button-->
+        <a href="/highscores.html"id="highscore-button" class="button">High Scores</a>
         <div class="timer">
-            <div class="timerText">Time:</div>
+            <div class="button">Time:</div>
             <div id="countdownTimer"></div>
     
         </div>
     </nav>
-
     <div class="startPage">
-        <h1>Coding Quiz Challenge</h1> 
-        <p>
-            Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-        </p>
-         <!--Button to start quiz-->
-        <div class="startButton"><button>Start Quiz</button></div>
+        <div id="home" class="flex-column flex-center">
+            <h1>Coding Quiz Challenge</h1> 
+            <p>
+                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+            </p>
+            <a href="/game.html"id="start-button" class="button">Start game</a>
+        </div>
     </div>
 
-    <main>
-    <!--main: includes questions, answers, etc.-->
-    <!--questions id: title-->
+
+
+    <!-- <main>
+    main: includes questions, answers, etc.
+    questions id: title
     <div id="questions">
-        <!--buttons id: buttons-->
+        buttons id: buttons
         <div id="buttons">
 
         </div>
     </div>
-    </main>
+    </main> -->
     <!--Link to jQuery library-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--Link to javascript file-->

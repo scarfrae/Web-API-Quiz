@@ -1,9 +1,52 @@
-.startPage{
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+body {
+    background-color: rgba(4, 4, 25, 0.882);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald';
 }
 
 nav{
     display: flex;
     justify-content: space-between;
+    font-size: large;
+    padding: 0.25rem;
 }
+
+.startPage{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+p {
+    color: whitesmoke;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    text-decoration: none;
+    color: rgba(31, 31, 67, 0.882);
+    background: rgb(186, 25, 25);
+    border-radius: 4px;
+}
+
+#start-button {
+    font-size: x-large
+}
+
+
 

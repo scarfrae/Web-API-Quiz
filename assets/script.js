@@ -48,14 +48,14 @@ questionFormat();
 //seconds left at start of quiz
 var timeLeft = 60;
 //function to countdown
-function countdown_timer(){
-    var timeInterval = setInterval(function() {
-        timeLeft--;
-        timerEl.textContent = timeLeft;
+// function countdown_timer(){
+//     var timeInterval = setInterval(function() {
+//         timeLeft--;
+//         timerEl.textContent = timeLeft;
 
-        if(timeleft === 0) {
-            clearInterval(timeInterval);
-        }
-    }, 1000);
-}
-countdown_timer();
+//         if(timeleft === 0) {
+//             clearInterval(timeInterval);
+//         }
+//     }, 1000);
+// }
+// countdown_timer();
