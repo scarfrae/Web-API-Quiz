@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 body {
-    background-color: rgba(4, 4, 25, 0.882);
+    /*background-color: rgba(4, 4, 25, 0.882);*/
 }
 
 * {
@@ -17,20 +17,14 @@ nav{
     padding: 0.25rem;
 }
 
-.startPage{
+.container{
+    display: block;
+    margin: 80px auto;
     text-align: center;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-h1 {
-    color: whitesmoke;
-}
-
-p {
-    color: whitesmoke;
+    box-shadow: 0 4px 8px whitesmoke;
+    width: 80vw;
+    padding: 20px;
+    background-color: beige
 }
 
 .hidden {
@@ -39,14 +33,14 @@ p {
 
 .button {
     text-decoration: none;
-    color: rgba(31, 31, 67, 0.882);
-    background: rgb(186, 25, 25);
+    color: black;
+    background: rgb(39, 162, 171);
     border-radius: 4px;
 }
 
 #start-button {
     font-size: x-large
-}
+} 
 
 
 

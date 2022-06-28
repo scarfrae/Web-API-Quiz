@@ -10,35 +10,44 @@
 
 </head>
 <body>
+    <!--navBar section: including countdown timer and High Scores button-->
     <nav>
         <!--Highscore button-->
         <a href="/highScoresButton.html"id="highscore-button" class="button">High Scores</a>
-        <div class="timer">
-            <div class="button">Time:</div>
-            <div id="countdownTimer"></div>
-    
-        </div>
+        <div id="timer"></div>
+        
     </nav>
-    <div class="startPage">
+    <section class = "container">
+        <div class="startPage">
             <h1>Coding Quiz Challenge</h1> 
             <p>
                 Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
             </p>
             <a href="/javascriptGame.html"id="start-button" class="button">Start game</a>
-    </div>
+        </div>
+    </section>
 
+    <!--questions container (starts (css) hidden and button start game can create it )-->
+    <!--when user presses start game it calls function that calls first index of questions var-->
+    <div class="questionContainer" id="question">
+        <div class="choicesContainer" id="choicesContainer">
+            <!--data allows access to input of choicescontainer-->
+            <div class="choices" data-id="1"></div>
+            <div class="choices" data-id="2"></div>
+            <div class="choices" data-id="3"></div>
+            <div class="choices" data-id="4"></div>
+        </div>
 
-
-    <!-- <main>
-    main: includes questions, answers, etc.
-    questions id: title
-    <div id="questions">
-        buttons id: buttons
-        <div id="buttons">
+        <div class="result" id="results">
 
         </div>
+
     </div>
-    </main> -->
+
+
+
+
+  
     <!--Link to jQuery library-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--Link to javascript file-->
