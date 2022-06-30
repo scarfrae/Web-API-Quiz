@@ -3,9 +3,8 @@
     //options is radio form  and then submit button (onclick events)
         //boolin function to determine if question was correct or incorrect 
         //function to move onto next question
-    
-        var displayQuestions = document.getElementById("question");
-        var displayButtons = document.getElementById("choicesContainer");
+
+// var displayButtons = document.getElementById("choicesContainer");
 //Array of objects (questions)
     var questions = [
         {
@@ -43,57 +42,42 @@ function countdownTimer(){
         }
     }, 1000);
 }
-    // countdownTimer();
-// function iterateQuestions {
-//     //Get question 
-//     var displayQuestion = document.getElementById("question");
-
-//     displayQuestions.innerHTML = questions
-// }
-// var displayQuestions = document.getElementById("question");
-// var displayButtons = document.getElementById("choicesContainer");
-
-//function to display questions array
-
-
-
-
+var displayQuestions = document.getElementById("question");
+var questionIndex = 0;
+var buttonChoices = document.getElementById("choicesContainer");
 function startGame() {
-
     //gets buttons from html 
-
-    var button1 = document.getElementById('choices1')
-    var button2 = document.getElementById('choices2')
-    var button3 = document.getElementById('choices3')
-    var button4 = document.getElementById('choices4')
-    var i = 0;
-    //while loop iterates through questions array
-    while(i < questions.length){
-        //attach onclick events to each of list item created
-        var currentQuestions = questions[i].title;
-        displayQuestions.innerHTML = currentQuestions;
-        //second four loop iterates through options array
-    
-        //grabs options info based on index
-        button1.innerHTML = questions[i].options[0];
-        button2.innerHTML = questions[i].options[1];
-        button3.innerHTML = questions[i].options[2];
-        button4.innerHTML = questions[i].options[3];
+    function nextQuestion(){
+        //first object in questions array variable for index
+        var currentQuestion = questions[questionIndex];
+        // var currentQuestions = questions[Q].title;
+        displayQuestions.textContent = currentQuestion.title;
         
-    i++;
-        // displayQuestions.innerHTML = currentOptions;
+        // currentQuestion.options.forEach(function (option, i){
+        //     //button created
+        //     var buttonCreated = document.createElement('button');
+        //     // buttonCreated.setAttribute("class", "button")
+        //     buttonCreated.innerText = option;
+        //     console.log(option);
+        //     document.buttonChoices.appendChild(buttonCreated);
+        //     console.log(buttonChoices.appendChild(buttonCreated));
+        //     document.getElementById
+            
+            
+
+        // });
+
+
     }
-    //loop through questions
-    //use for loop/foreach loop
-    //create buttons for each option in javascript or make in html 
-    //click event for buttons so when it is clicked will go to next question (use button.text content) 
+    nextQuestion();
 }
-startGame();
+
 
 //function used to remove start page from dom and trigger timer
 function start_button() {
-    startPage.remove();
+    startPage.innerHTML = "";
     countdownTimer();
+    startGame();
 }
 // var startPageHidden = document.getElementsByClassName("startPage");
 // startPageHidden.remove();
