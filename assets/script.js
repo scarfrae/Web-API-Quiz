@@ -4,10 +4,8 @@
         //boolin function to determine if question was correct or incorrect 
         //function to move onto next question
     
-
-    
-
-var questionIndex = 0;
+        var displayQuestions = document.getElementById("question");
+        var displayButtons = document.getElementById("choicesContainer");
 //Array of objects (questions)
     var questions = [
         {
@@ -28,30 +26,6 @@ var questionIndex = 0;
             correct_answer: "console.log",
         },
     ];
-
-    var displayQuestions = document.getElementById("question");
-    var displayButtons = document.getElementById("choicesContainer");
-
-//function to display questions array
-function startGame() {
-
-    var currentQuestions = questions[questionIndex].title;
-    displayQuestions.innerHTML = currentQuestions;
-
-    console.log(currentQuestions);
-
-    for(var i = 0; i < 4; i++){
-        currentQuestions = questions[questionIndex].options
-        displayQuestions.innerHTML = currentQuestions;
-    }
-    //loop through questions
-    //use for loop/foreach loop
-    //create buttons for each option in javascript or make in html 
-    //click event for buttons so when it is clicked will go to next question (use button.text content) 
-}
-startGame();
-
-
 var timerEl = document.querySelector("#timer");
 //timer 
 //seconds left at start of quiz
@@ -69,4 +43,59 @@ function countdownTimer(){
         }
     }, 1000);
 }
-countdownTimer();
+    // countdownTimer();
+// function iterateQuestions {
+//     //Get question 
+//     var displayQuestion = document.getElementById("question");
+
+//     displayQuestions.innerHTML = questions
+// }
+// var displayQuestions = document.getElementById("question");
+// var displayButtons = document.getElementById("choicesContainer");
+
+//function to display questions array
+
+
+
+
+function startGame() {
+
+    //gets buttons from html 
+
+    var button1 = document.getElementById('choices1')
+    var button2 = document.getElementById('choices2')
+    var button3 = document.getElementById('choices3')
+    var button4 = document.getElementById('choices4')
+    var i = 0;
+    //while loop iterates through questions array
+    while(i < questions.length){
+        //attach onclick events to each of list item created
+        var currentQuestions = questions[i].title;
+        displayQuestions.innerHTML = currentQuestions;
+        //second four loop iterates through options array
+    
+        //grabs options info based on index
+        button1.innerHTML = questions[i].options[0];
+        button2.innerHTML = questions[i].options[1];
+        button3.innerHTML = questions[i].options[2];
+        button4.innerHTML = questions[i].options[3];
+        
+    i++;
+        // displayQuestions.innerHTML = currentOptions;
+    }
+    //loop through questions
+    //use for loop/foreach loop
+    //create buttons for each option in javascript or make in html 
+    //click event for buttons so when it is clicked will go to next question (use button.text content) 
+}
+startGame();
+
+//function used to remove start page from dom and trigger timer
+function start_button() {
+    startPage.remove();
+    countdownTimer();
+}
+// var startPageHidden = document.getElementsByClassName("startPage");
+// startPageHidden.remove();
+
+

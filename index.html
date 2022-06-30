@@ -13,17 +13,32 @@
     <!--navBar section: including countdown timer and High Scores button-->
     <nav>
         <!--Highscore button-->
-        <a href="/highScoresButton.html"id="highscore-button" class="button">High Scores</a>
-        <div id="timer"></div>
+        <button onclick="highScore_button()" id="highScore-button" class="button">High Scores</button>
+        <!-- <a href="/highScoresButton.html"id="highscore-button" class="button">High Scores</a> -->
+        <div id="timer">Time: 5</div>
         
     </nav>
     <section class = "container">
-        <div class="startPage">
-            <h1>Coding Quiz Challenge</h1> 
-            <p>
-                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-            </p>
-            <a href="/javascriptGame.html"id="start-button" class="button">Start game</a>
+        <div class="startPage" id="startPage">
+            <div class="stPageHeader">
+                <h1>Coding Quiz Challenge</h1> 
+            </div>
+            <div class="stPageRules">
+                <p>
+                    Rules:
+                </p>
+                <ol>
+                    <li>There are 4 questions. Answer each to move onto the next one.</li>
+                    <li>Incorrect answers will penalized and ten seconds will be deducted!</li>
+                    <li>If you finish before time has run out, the remaining time will be added to your score. </li>
+                </ol>
+            </div>
+            <br>
+
+            <div class="stPageButton">
+                <button onclick="start_button()" id="start-button" class="button">Start Game</button>
+            </div>
+            <!-- <a href="/javascriptGame.html"id="start-button" class="button">Start game</a> -->
         </div>
     </section>
 
@@ -32,10 +47,10 @@
     <div class="questionContainer" id="question">
         <div class="choicesContainer" id="choicesContainer">
             <!--data allows access to input of choicescontainer-->
-            <div class="choices" data-id="1"></div>
-            <div class="choices" data-id="2"></div>
-            <div class="choices" data-id="3"></div>
-            <div class="choices" data-id="4"></div>
+            <button class="choices" data-id="1" id="choices1"></button>
+            <button class="choices" data-id="2" id="choices2"></button>
+            <button class="choices" data-id="3" id="choices3"></button>
+            <button class="choices" data-id="4" id="choices4"></button>
         </div>
 
         <div class="result" id="results">
