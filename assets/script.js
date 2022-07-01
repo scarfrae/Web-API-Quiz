@@ -54,19 +54,35 @@ function startGame() {
 
     function nextQuestion() {
         currentQuestion.options.forEach(function (option, i){
+            
             //button created
             var buttonCreated = document.createElement('button');
+            //create attributes associated with button
+            buttonCreated.setAttribute('class', 'choiceBtnAttr')
             // buttonCreated.setAttribute("class", "button")
             buttonCreated.innerText = option;
-            console.log(option);
             buttonChoices.appendChild(buttonCreated);
+            //to create list of buttons rather than inline buttons
+            buttonChoices.appendChild(document.createElement("br"));
+    
             console.log(buttonChoices.appendChild(buttonCreated));
-            
+            // buttonCreated.onclick = callComparisonFunction;
         });
+        
+
+
 
     }
     nextQuestion();
 }
+var result = document.getElementById('results')
+//function compares result to right answer
+function callComparisonFunction () {
+    //if(currentQuestion.correct_answer == )
+}
+
+//add onclick event to buttonChoices
+//compare onclick to right answer
 
 
 //function used to remove start page from dom and trigger timer
