@@ -44,14 +44,46 @@ function countdownTimer(){
 }
 var displayQuestions = document.getElementById("question");
 var questionIndex = 0;
-var buttonChoices = document.getElementById("choicesContainer");
+// var buttonChoices = document.getElementById("choicesContainer");
+// function startGame() {
+//     gets buttons from html 
 function startGame() {
-    //gets buttons from html 
-    function nextQuestion(){
-        //first object in questions array variable for index
-        var currentQuestion = questions[questionIndex];
+    var currentQuestion = questions[questionIndex];
         // var currentQuestions = questions[Q].title;
-        displayQuestions.textContent = currentQuestion.title;
+    displayQuestions.textContent = currentQuestion.title;
+}
+
+function nextQuestion() {
+
+
+// Create an "li" node:
+const node = document.createElement("id");
+
+// Create a text node:
+const textnode = document.createTextNode("Water");
+
+// Append the text node to the "li" node:
+node.appendChild(textnode);
+
+// Append the "li" node to the list:
+document.getElementById("myList").appendChild(node);
+}
+
+
+    // nextQuestion();
+    
+// }
+        // function createChoicesItem(option) {
+        //     let li = document.createElement('li')
+        //     li.textContent = option;
+        //     return li;
+
+        // }
+       
+
+        // buttonChoices.appendChild(createChoicesItem('home'));
+        // createChoicesItem();
+        // console.log(createChoicesItem("home"));
         
         // currentQuestion.options.forEach(function (option, i){
         //     //button created
@@ -68,9 +100,7 @@ function startGame() {
         // });
 
 
-    }
-    nextQuestion();
-}
+    
 
 
 //function used to remove start page from dom and trigger timer
@@ -78,6 +108,11 @@ function start_button() {
     startPage.innerHTML = "";
     countdownTimer();
     startGame();
+    nextQuestion();
+
+
+    // startGame();
+    // nextQuestion();
 }
 // var startPageHidden = document.getElementsByClassName("startPage");
 // startPageHidden.remove();
