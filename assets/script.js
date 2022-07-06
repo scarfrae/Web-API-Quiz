@@ -45,9 +45,9 @@ function countdownTimer(){
 var displayQuestions = document.getElementById("question");
 var questionIndex = 0;
 var buttonChoices = document.getElementById("choicesContainer");
-// function startGame() {
+// function interateGame() {
 //     gets buttons from html 
-function startGame() {
+function interateGame(questionIndex) {
     var currentQuestion = questions[questionIndex];
         // var currentQuestions = questions[Q].title;
     displayQuestions.textContent = currentQuestion.title;
@@ -66,7 +66,7 @@ function startGame() {
             buttonChoices.appendChild(document.createElement("br"));
     
             console.log(buttonChoices.appendChild(buttonCreated));
-            // buttonCreated.onclick = callComparisonFunction;
+            buttonCreated.onclick = callComparisonFunction;
         });
         
 
@@ -77,8 +77,25 @@ function startGame() {
 }
 var result = document.getElementById('results')
 //function compares result to right answer
-function callComparisonFunction () {
+function callComparisonFunction (event) {
+    console.log(event.target.innerText);
+    var currentQuestion = questions[questionIndex];
+    console.log(currentQuestion.correct_answer)
+
+
+
+    // console.log(currentQuestion.correct_answer);
+
+    if (event.target.innerText == currentQuestion.correct_answer){
+        //this means user got answer correct
+        interateGame(questionIndex + 1);
+    }
+    else{
+        //this means user got question wrong
+        interateGame(questionIndex + 1);
+    }
     //if(currentQuestion.correct_answer == )
+    
 }
 
 //add onclick event to buttonChoices
@@ -89,10 +106,10 @@ function callComparisonFunction () {
 function start_button() {
     startPage.innerHTML = "";
     countdownTimer();
-    startGame();
+    interateGame(questionIndex);
 
 
-    // startGame();
+    // interateGame();
     // nextQuestion();
 }
 // var startPageHidden = document.getElementsByClassName("startPage");
