@@ -28,7 +28,7 @@
 var timerEl = document.querySelector("#timer");
 //timer 
 //seconds left at start of quiz
-var timeLeft = 5;
+var timeLeft = 30;
 // function to countdown
 function countdownTimer(){
 
@@ -52,9 +52,12 @@ function interateGame(questionIndex) {
         // var currentQuestions = questions[Q].title;
     displayQuestions.textContent = currentQuestion.title;
 
+
     function nextQuestion() {
+        //takes out old buttons
+        buttonChoices.textContent = "";
         currentQuestion.options.forEach(function (option, i){
-            
+
             //button created
             var buttonCreated = document.createElement('button');
             //create attributes associated with button
@@ -88,13 +91,29 @@ function callComparisonFunction (event) {
 
     if (event.target.innerText == currentQuestion.correct_answer){
         //this means user got answer correct
-        interateGame(questionIndex + 1);
+        interateGame(questionIndex++);
     }
     else{
         //this means user got question wrong
-        interateGame(questionIndex + 1);
+        interateGame(questionIndex++);
+        timeLeft -= 10;
     }
+
+    if(questionIndex == 3 || timeLeft <= 0){
+        console.log("game over!")
+        gameOver();
+    }
+
     //if(currentQuestion.correct_answer == )
+    
+}
+var questionAndAnswerContainer = document.querySelector(".q-and-a-container");
+function gameOver() {
+    clearInterval(timeLeft);
+    // questionAndAnswerContainer.setAttribute("class", "hidden");
+    questionAndAnswerContainer.classList.add("hidden")
+    var endGame = document.getElementById("endPage");
+    endGame.removeAttribute("class", "hidden");
     
 }
 

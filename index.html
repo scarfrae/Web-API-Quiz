@@ -15,7 +15,7 @@
         <!--Highscore button-->
         <button onclick="highScore_button()" id="highScore-button" class="button">High Scores</button>
         <!-- <a href="/highScoresButton.html"id="highscore-button" class="button">High Scores</a> -->
-        <div id="timer">Time: 5</div>
+        <div id="timer">Time: 30</div>
         
     </nav>
     <section class = "container">
@@ -44,6 +44,7 @@
 
     <!--questions container (starts (css) hidden and button start game can create it )-->
     <!--when user presses start game it calls function that calls first index of questions var-->
+    <div class="q-and-a-container">
         <div class="questionContainer" id="question">
             <!-- <ul class="choices" id="choicesContainer">
                 data allows access to input of choicescontainer-->
@@ -55,13 +56,22 @@
             
         </div>
 
-        <div class="result" id="results">
-
-        </div>
-
+    </div>
        
-    </section>
+    <div class="endPage hidden" id="endPage">
+        <p>End Game</p>
+        <form name="myform">
+            <input type="text" name="fname" placeholder="Enter Initials"></input>
+            <input type="submit" name="submit"></input>
+        </form>
+        <div class="result" id="results">
+            <!--put score within-->
+        </div>
+        
+        <!-- <a href="/javascriptGame.html"id="start-button" class="button">Start game</a> -->
+    </div>
 
+</section>
 
 
 
